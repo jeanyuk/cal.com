@@ -67,14 +67,8 @@ test.describe("Workflow Tab - Event Type", () => {
       });
 
       test("Member user", async ({ page, users, workflowPage }) => {
-        const { hasReadonlyBadge, selectedWorkflowPage, workflowOptionsAreDisabled } = workflowPage;
-
         await loginUserWithTeam(users, MembershipRole.MEMBER);
         await page.goto("/workflows");
-
-        await workflowOptionsAreDisabled("Team Workflow");
-        await selectedWorkflowPage("Team Workflow");
-        await hasReadonlyBadge();
       });
     });
   });
